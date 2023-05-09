@@ -15,4 +15,4 @@
 
   - name: Show Kernel Version
     ansible.builtin.debug:
-      msg: {{ kernel_version_before }}
+      msg: "{{ kernel_version_before }}"
