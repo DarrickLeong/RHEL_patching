@@ -4,8 +4,8 @@
   gather_facts: false
 
   tasks:
-  - name: reboot server
-    ansible.builtin.command: reboot
+  - name: Unconditionally reboot the machine with all defaults
+  ansible.builtin.reboot:
 
   - name: Wait for connection
     ansible.builtin.wait_for_connection:
