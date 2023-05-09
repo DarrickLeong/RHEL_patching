@@ -1,8 +1,8 @@
 ---
 - name: Post Kernel patch Check
-  hosts: localhost
+  hosts: all
   gather_facts: false
-  
+
   tasks:
   - name: reboot server
     ansible.builtin.command: reboot

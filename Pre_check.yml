@@ -1,6 +1,6 @@
 ---
 - name: Patch RHEL Kernel
-  hosts: localhost
+  hosts: all
   gather_facts: false
 
   tasks:
