@@ -1,5 +1,7 @@
 ---
 - name: Patch RHEL Kernel
+  hosts: localhost
+  gather_facts: false
 
   tasks:
   - name: Wait for connection

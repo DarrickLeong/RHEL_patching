@@ -1,6 +1,8 @@
 ---
 - name: Post Kernel patch Check
-
+  hosts: localhost
+  gather_facts: false
+  
   tasks:  
   - name: Check Kernel Version after
     ansible.builtin.command: uname -r

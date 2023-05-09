@@ -1,6 +1,8 @@
 ---
 - name: Patch RHEL Kernel
-
+  hosts: localhost
+  gather_facts: false
+  
   tasks:
   - name: Patch Kernel Version
     ansible.builtin.command: dnf update kernel -y
