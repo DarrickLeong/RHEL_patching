@@ -1,0 +1,11 @@
+---
+- name: Post Kernel patch Check
+
+  tasks:
+  - name: reboot server
+    ansible.builtin.command: reboot
+
+  - name: Wait for connection
+    ansible.builtin.wait_for_connection:
+      delay: 5
+      timeout: 60

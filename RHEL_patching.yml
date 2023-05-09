@@ -1,21 +1,6 @@
 ---
-- name: Update httpd to latest version
-  hosts: yourwebserver
-  become: yes
+- name: Patch RHEL Kernel
 
   tasks:
-  - name: Gather current httpd version
-    yum:
-      list: httpd
-    register: current_version
-
-  - name: Update httpd to latest version
-    yum:
-      name: httpd
-      state: latest
-    when: current_version.results[0].version != ansible_pkg_mgr_fact.packages['httpd'].version
-
-  - name: Restart httpd service
-    systemd:
-      name: httpd
-      state: restarted
+  - name: Patch Kernel Version
+    ansible.builtin.command: dnf update kernel -y

@@ -1,0 +1,11 @@
+---
+- name: Post Kernel patch Check
+
+  tasks:  
+  - name: Check Kernel Version after
+    ansible.builtin.command: uname -r
+    register: kernel_version_after
+
+  - name: Show Kernel Version
+    ansible.builtin.debug:
+      msg: {{kernel_version_after}}

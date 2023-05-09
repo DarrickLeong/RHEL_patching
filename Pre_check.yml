@@ -1,0 +1,16 @@
+---
+- name: Patch RHEL Kernel
+
+  tasks:
+  - name: Wait for connection
+    ansible.builtin.wait_for_connection:
+      delay: 10
+      timeout: 60
+ 
+  - name: Check Kernel Version before
+    ansible.builtin.command: uname -r
+    register: kernel_version_before
+
+  - name: Show Kernel Version
+    ansible.builtin.debug:
+      msg: {{kernel_version_before}}
